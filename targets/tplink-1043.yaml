@@ -1,0 +1,39 @@
+targets:
+  main:
+    resources:
+      RemotePlace:
+        name: lab-tl1043
+    drivers:
+      SerialDriver:
+        txdelay: 0.0001
+      power_driver:
+        cls: GpioDigitalOutputDriver
+        name: power_driver
+        bindings:
+          gpio: power
+      reset_driver:
+        cls: GpioDigitalOutputDriver
+        name: reset_driver
+        bindings:
+          gpio: reset
+      DigitalOutputPowerDriver:
+        bindings:
+          output: power_driver
+      ShellDriver:
+        prompt: 'root@[\w-]+:[^ ]+ '
+        login_prompt: " login: "
+        username: "root"
+        console_ready: "Please press Enter to activate this console."
+      TFTPProviderDriver: {}
+      TL1043Strategy:
+        bindings:
+          reset: reset_driver
+
+images:
+  root: !template $LG_IMAGE
+
+imports:
+  - strategy_1043.py
+
+options:
+  crossbar_url: ws://192.168.0.175:20408/ws
