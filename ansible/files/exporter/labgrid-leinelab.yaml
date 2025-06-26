@@ -1,0 +1,14 @@
+tl-1043:
+  location: leinelab
+  RawSerialPort:
+    port: "/dev/ttyS0"
+    speed: 115200
+  power:
+    cls: SysfsGPIO
+    index: 539 # gpio 27
+  reset:
+    cls: SysfsGPIO
+    index: 529 # gpio 17
+  TFTPProvider:
+    internal: '/srv/tftp/'
+    external: '/'

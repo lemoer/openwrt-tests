@@ -21,7 +21,7 @@ class UBootTFTPStrategy(Strategy):
     bindings = {
         "power": "PowerProtocol",
         "console": "ConsoleProtocol",
-        "uboot": "LinuxBootProtocol",
+        "uboot": "SmallUBootDriver",
         "shell": "ShellDriver",
         "tftp": "TFTPProviderDriver",
     }
