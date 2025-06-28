@@ -12,3 +12,6 @@ tl-1043:
   TFTPProvider:
     internal: '/srv/tftp/'
     external: '/'
+  NetworkService:
+    address: 192.168.1.1
+    username: root

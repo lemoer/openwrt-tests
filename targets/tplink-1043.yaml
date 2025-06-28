@@ -35,6 +35,7 @@ targets:
         boot_secret: 'tpl'
 #      UBootStrategy: {}
       UBootTFTPStrategy: {}
+      SSHDriver: {}
 #      TL1043Strategy:
 #        bindings:
 #          reset: reset_driver
