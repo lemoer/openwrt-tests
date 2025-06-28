@@ -29,9 +29,7 @@ targets:
         init_commands:
           - setenv ipaddr 192.168.100.200
           - setenv serverip 192.168.100.1
-          - setenv bootfile openwrt-24.10.1-ath79-generic-tplink_tl-wr1043nd-v3-initramfs-kernel.bin
-          - tftpboot $bootfile
-        #boot_command: "bootm"
+          - tftp 0x82000000 openwrt-24.10.1-ath79-generic-tplink_tl-wr1043nd-v3-initramfs-kernel.bin
         prompt: "ap135>"
         boot_expression: 'Autobooting in 1 seconds'
         boot_secret: 'tpl'
